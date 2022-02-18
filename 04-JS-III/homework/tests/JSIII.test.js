@@ -130,7 +130,7 @@ describe('cuentoElementos(arreglo)', function() {
   });
 });
 
-describe('diaDeLaSemana(numeroDeDia)', function() {
+describe('mesesDelAño(array)', function() {
   it('should return he name of the day associated with that number', function() {
     expect(diaDeLaSemana(3)).toBe("Es dia Laboral");
     expect(diaDeLaSemana(2)).toBe("Es dia Laboral");

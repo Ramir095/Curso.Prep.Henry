@@ -160,9 +160,8 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  parseInt(n);
-  var cadena = n + ""; //o var cadena = n.toString().
-  if(cadena.charAt(0) === "9"){ // o cadena[0] === "9"
+  var cadena = n.toString()
+  if(cadena[0] === "9"){
     return true;
   }
   return false;
@@ -178,11 +177,9 @@ function empiezaConNueve(n) {
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
-  //Escribe tu código aquí  
-  var iguales = 0;
+  //Escribe tu código aquí
   for (var i = 0; i < arreglo.length - 1; i++) { //El -1 es para que el if no compare los elementos hasta el ultimo. Con el -1 solo llega al penultimo y lo compara con el ultimo
-    iguales = arreglo[i];
-    if (iguales !== arreglo[i + 1]) { //significa "si iguales es distinto, que la 2da i, retonar falso"
+    if (arreglo[i] !== arreglo[i + 1]) { //significa "si el primero numero, osea arreglo[i], es distinto, que la 2da i, retonar falso"
       return false
     }
   }

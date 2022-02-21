@@ -22,14 +22,10 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-  var objetoDos = {
-    ...objeto, //extrae toda la informacion que tiene objeto y lo guarda en el nuevo objeto que cree
-    [property]: null, //  la propiedad a la que accedes/agregas puede venir dentro de una variable (osea entre "").
-    //function agregarPropiedad (nuevaProp, nuevoValor) {
-        //miObjeto[nuevaProp] = nuevoValor;
-    //}
-  };
-    return objetoDos;
+  objeto[property] = null;
+  return objeto; // >>  la propiedad a la que accedes/agregas puede venir dentro de una variable (osea entre "").
+  //function agregarPropiedad (nuevaProp, nuevoValor) {
+      //miObjeto[nuevaProp] = nuevoValor;
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -160,22 +156,21 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  var productoDos = {
-    ...producto, //extrae toda la informacion que tiene objeto y lo guarda en el nuevo objeto que cree
-    ["calcularPrecioDescuento"]: function(){
-      var total = producto.precio * producto.porcentajeDeDescuento;
-      return producto.precio - total;
-    }
-  };
-  return productoDos;
+  producto.calcularPrecioDescuento = function(){
+    var total = producto.precio * producto.porcentajeDeDescuento;
+    return producto.precio - total;
+  }
+  return producto;
 
-  // producto.calcularPrecioDescuento = function() {
-  // var descuento = producto.precio * producto.porcentajeDeDescuento;
-  // return producto.precio - descuento;
-  // } 
-  // return producto
-
-  //Para comprobar >> agregarMetodoCalculoDescuento(storeItem).calcularPrecioDescuento()
+  // o tambien podemos hacer
+  // var productoDos = {
+  //   ...producto, >> extrae toda la informacion que tiene objeto y lo guarda en el nuevo objeto que cree
+  //   ["calcularPrecioDescuento"]: function(){
+  //     var total = producto.precio * producto.porcentajeDeDescuento;
+  //     return producto.precio - total;
+  //   }
+  // };
+  // return productoDos;  
 }
 
 // No modificar nada debajo de esta línea
